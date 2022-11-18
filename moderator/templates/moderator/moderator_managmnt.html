@@ -1,0 +1,38 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moderator_managment</title>
+</head>
+<body>
+<center>
+<h1>MANAGE MODERATOR</h1>
+	<table border="2" class="table table-striped"><tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>category</th>
+		<th>email_id</th>
+		<th>category</th>
+        <th>Password</th>
+		</tr>
+        {% for i in aa %}
+		<tr>
+			<td>{{ i.moderator_name }}</td>
+			<td>{{ i.age }}</td>
+			<td>{{ i.qualification }}</td>
+			<td>{{ i.email_id }}</td>
+            <td>{{ i.category }}</td>
+            <td>{{ i.password }}</td>
+			<td><a href="{% url 'upd' idd=i.moderator_id  %}" class="btn btn-primary">Update</a></td>
+			<td><a href="{% url 'dlt' idd=i.moderator_id %}" class="btn btn-primary">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+
+	</table>
+</center>
+
+</body>
+</html>
+{% endblock %}

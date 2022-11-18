@@ -1,0 +1,29 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+	<title>view_forum_user</title>
+</head>
+<body>
+<center>
+	<h1>View forum user</h1>
+	<table border="2" class="table table-striped">
+		<tr>
+             <th>Forum Name</th>
+    		<th>Moderator name</th>
+
+		</tr>
+        {% for i in y %}
+		<tr>
+         <td>{{ i.forum_name }}</td>
+            <td>{{ i.moderator.moderator_name }}</td>
+
+			
+		</tr>
+        {% endfor %}
+			
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

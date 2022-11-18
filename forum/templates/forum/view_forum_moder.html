@@ -1,0 +1,29 @@
+{% extends 'temp/moderator.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view_discussion_moder</title>
+</head>
+<body>
+<center>
+	<h1>View Discussion</h1>
+	<table border="2" class="table table-striped">
+
+		<tr>
+			<th>Forum Name</th>
+{#			<th></th>#}
+		</tr>
+        {% for i in x %}
+		<tr>
+            <td>{{ i.forum_name }}</td>
+{#			<td></td>#}
+{#			<td><a href=" ">Approve</a></td>#}
+{#			<td><a href=" ">Reject</a></td>#}
+		</tr>
+			{% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

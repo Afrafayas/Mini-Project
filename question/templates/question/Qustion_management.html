@@ -1,0 +1,33 @@
+{% extends 'temp/moderator.html' %}
+{% block base %}
+<html>
+<head>
+	<title>View Question_management</title>
+</head>
+<body>
+<center>
+	<h1>View Question managment</h1>
+
+	<table border="2" class="table table-striped">
+		<tr>
+{#            <th>Moderator Name</th>#}
+			<th>Question</th>
+			<th>category</th>
+            <th>status</th>
+		</tr>
+        {% for i in cc %}
+
+		<tr>
+{#            <td>{{ i.moderator.moderator_name }}</td>#}
+            <td>{{ i.question }}</td>
+			<td>{{ i.category }}</td>
+            <td>{{ i.status }}</td>
+			<td><a href="{% url 'quesapp' idd=i.question_id %}" class="btn btn-primary">Approve</a></td>
+			<td><a href=" {% url 'quesrej' idd=i.question_id %}" class="btn btn-primary">Reject</a></td>
+		</tr>
+			 {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}
